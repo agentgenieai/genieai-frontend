@@ -35,12 +35,12 @@ const Wlform = () => {
   }, [formSubmitted]);
 
   return (
-    <div classname="formContainer">
-      <div classname="leftForm" id="getWl">
+    <div className="formContainer">
+      <div className="leftForm" id="getWl">
         {formSubmitted ? (
-          <div classname="successMessage">Your form is submitted</div>
+          <div className="successMessage">Your form is submitted</div>
         ) : (
-          <form classname="form" onSubmit={handleSubmit}>
+          <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="name">Enter your name</label>
             <input
               placeholder="Your name"
@@ -60,11 +60,11 @@ const Wlform = () => {
               name="evmaddress"
               onChange={handleForm}
             />
-            <input type="submit" classname="submit-button button" />
+            <input type="submit" className="submit-button button" />
           </form>
         )}
       </div>
-      <div classname="rightForm">
+      <div className="rightForm">
         <div>
           <div>Apply WL for Genesis Collection</div>
           <ol>
