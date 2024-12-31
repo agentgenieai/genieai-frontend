@@ -6,7 +6,7 @@ const Wlform = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleForm = (e) => {
-    setData({ ...data, [e.target.data]: e.target.value });
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async(e) => {
