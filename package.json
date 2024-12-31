@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "vercel-build": "npm install && npm run build"
+    "vercel-build": "npm install && npm run build",
+    "postinstall": "chmod +x node_modules/.bin/vite"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
