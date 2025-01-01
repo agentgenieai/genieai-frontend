@@ -11,7 +11,7 @@ const Wlform = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    await fetch(`https://genieai-frontend.vercel.app/`,{
+    await fetch(`https://genieai-gamma.vercel.app/`,{
       method: "POST",
       body:JSON.stringify(data),
       headers:{
