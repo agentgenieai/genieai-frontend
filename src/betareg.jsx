@@ -4,22 +4,32 @@ import gsap from "gsap";
 const Wlform = () => {
   const [data, setData] = useState({});
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // New state for loading
 
   const handleForm = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`https://genieai-backend.vercel.app`,{
-      method: "POST",
-      body:JSON.stringify(data),
-      headers:{
-        "Content-Type": "application/json",
-      }
-    })
-    setFormSubmitted(true); 
-    console.log("Form submission successful");
+    setIsLoading(true); // Set loading to true when form is submitted
+
+    try {
+      const response = await fetch(`http://localhost:5000`, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const result = await response.text(); // Assuming the server sends a plain text response
+      console.log(result); // Log the result to the console
+      setFormSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsLoading(false); // Reset loading state after API call is completed
+    }
   };
 
   useEffect(() => {
@@ -48,7 +58,8 @@ const Wlform = () => {
               id="name"
               onChange={handleForm}
             />
-            <label htmlFor="tweetlink">Follow our X and enter your tweet link</label><a href="https://x.com/agentgenieai">   (X link)</a>
+            <label htmlFor="tweetlink">Follow our X and enter your tweet link</label>
+            <a href="https://x.com/agentgenieai">   (X link)</a>
             <input
               placeholder="Tweet link"
               name="tweetlink"
@@ -60,7 +71,17 @@ const Wlform = () => {
               name="evmaddress"
               onChange={handleForm}
             />
-            <input type="submit" className="submit-button button" />
+            <input
+              type="submit"
+              className="button"
+              disabled={isLoading} // Disable button while loading
+            />
+            {isLoading && (
+              <div className="loading">
+                <div className="spinner"></div>
+                <span>Submitting...</span>
+              </div>
+            )}
           </form>
         )}
       </div>
