@@ -60,8 +60,6 @@ a {
   background: linear-gradient(to right,white, #ff7e5f, #feb47b,white);
   -webkit-background-clip: text;
   color: transparent;
-
-  
 }
 
 .h1 span{
@@ -71,6 +69,35 @@ a {
 @media (max-width: 600px) {
   .h1 span {
     font-size: 2rem;
+  }
+}
+
+.loading {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #c5ff4a;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #c5ff4a;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
