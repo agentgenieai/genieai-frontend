@@ -52,7 +52,7 @@ const Wlform = () => {
         ) : (
           <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="name">Enter your name</label>
-            <input
+            <input required
               placeholder="Your name"
               name="name"
               id="name"
@@ -60,13 +60,13 @@ const Wlform = () => {
             />
             <label htmlFor="tweetlink">Follow our X and enter your tweet link</label>
             <a href="https://x.com/agentgenieai">   (X link)</a>
-            <input
+            <input required
               placeholder="Tweet link"
               name="tweetlink"
               onChange={handleForm}
             />
             <label htmlFor="evmaddress">Enter your EVM address</label>
-            <input
+            <input required
               placeholder="EVM address"
               name="evmaddress"
               onChange={handleForm}
