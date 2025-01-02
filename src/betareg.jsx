@@ -59,7 +59,7 @@ const Wlform = () => {
               onChange={handleForm}
             />
             <label htmlFor="tweetlink">Follow our X and enter your tweet link</label>
-            <a href="https://x.com/agentgenieai">   (X link)</a>
+            <a href="https://x.com/agentgenieai/status/1874827561169211425">   (X link)</a>
             <input required
               placeholder="Tweet link"
               name="tweetlink"
