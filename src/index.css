@@ -21,7 +21,7 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color:#FFDAB9;
   font-family: "Poppins";
 }
 
@@ -52,6 +52,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 
 .h1 {
@@ -82,6 +83,9 @@ a {
   -webkit-background-clip: text;
   color: transparent;
 }
+.cta-div p{
+  user-select: none;
+}
 
 .features {
   padding: 4rem 2rem;
@@ -92,9 +96,10 @@ a {
 .features h3 {
   font-size: 2.8rem;
   margin-bottom: 2rem;
+  background: linear-gradient(to right,white, #ff7e5f, #feb47b,white);
   -webkit-background-clip: text;
-  background-clip: text;
-  color: #c5ff4a;
+  color: transparent;
+  user-select: none;
 }
 
 .feature-list {
@@ -141,9 +146,13 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  color: #c5ff4a;
   margin-bottom: 15px;
+  background: linear-gradient(to right,white, #ff7e5f, #feb47b,white);
+  -webkit-background-clip: text;
+  color: transparent;
+  user-select: none;
 }
+
 
 .useCaseContainer {
   width: 100%;
@@ -344,17 +353,21 @@ label {
 .Vision h1 {
   font-size: 4rem;
   font-family: "Inter", sans-serif;
-  color: #c5ff4a;
+  background: linear-gradient(to right,white, #ff7e5f, #feb47b,white);
+  -webkit-background-clip: text;
+  color: transparent;
+  user-select: none;
 }
 
 .Vision p {
   font-size: 1.5rem;
   font-family: "Inter", sans-serif;
   padding: 4px;
-  color: #ffd700;
+  color: #FFDAB9;
 }
 
-/* Footer Styles */
+
+
 .footer {
   background-color: #1c1c1c;
   color: #ffffff;
@@ -388,7 +401,6 @@ label {
   transform: scale(1.2);
 }
 
-/* My Swiper Styles */
 .mySwiper {
   display: flex;
   flex-direction: column;
@@ -396,11 +408,12 @@ label {
   align-items: center;
   min-height: 300px;
   text-align: center;
-  color: #ffd700;
+  color:#FFDAB9;
   border-radius: 10px;
   max-height: 850px;
   width: 100%;
 }
+
 
 
 .social-links {
@@ -428,7 +441,10 @@ label {
   width: 100%;
   font-size: 5rem;
   font-family: "Inter", sans-serif;
-  color: #c5ff4a;
+  background: linear-gradient(to right, #ff7e5f,white, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
+  user-select: none;
 }
 
 
