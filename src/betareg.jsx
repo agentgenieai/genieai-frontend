@@ -4,7 +4,7 @@ import gsap from "gsap";
 const Wlform = () => {
   const [data, setData] = useState({});
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // New state for loading
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleForm = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -12,23 +12,23 @@ const Wlform = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // Set loading to true when form is submitted
+    setIsLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5000`, {
+      const response = await fetch(`https://genieai-backend.vercel.app`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
         },
       });
-      const result = await response.text(); // Assuming the server sends a plain text response
-      console.log(result); // Log the result to the console
+      const result = await response.text();
+      console.log(result);
       setFormSubmitted(true);
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
-      setIsLoading(false); // Reset loading state after API call is completed
+      setIsLoading(false);
     }
   };
 
@@ -74,7 +74,7 @@ const Wlform = () => {
             <input
               type="submit"
               className="button"
-              disabled={isLoading} // Disable button while loading
+              disabled={isLoading} 
             />
             {isLoading && (
               <div className="loading">
